@@ -13,7 +13,6 @@ body {
 }
 
 .pad {
-    flex: 1 0 24%;
     border: solid 1px gray;
     border-radius: 2px;
 }
