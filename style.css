@@ -1,3 +1,7 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(255, 204, 62);
+}
 
 .container {
     display: flex;
@@ -18,3 +22,18 @@
     background-color: black;
 }
 
+.button-div {
+    display: flex;
+    justify-content: center;
+}
+
+.button-div > button {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 20px;
+    background-color: rgb(255, 166, 0);
+    color: white;
+    border:solid 5px rgb(211, 137, 0);
+    border-radius: 15px;
+
+}
