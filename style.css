@@ -1,0 +1,20 @@
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    height: 60vw;
+    border: solid 2px black;
+    border-radius: 5px;
+}
+
+.pad {
+    flex: 1 0 24%;
+    border: solid 1px gray;
+    border-radius: 2px;
+}
+
+.fill-color {
+    background-color: black;
+}
+
