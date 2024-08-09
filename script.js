@@ -1,15 +1,15 @@
 const containerDiv = document.querySelector('.container');
-const resetButton = document.querySelector('.button-div > button');
-
+const resizeButton = document.querySelector('button#resize');
+const resetButton = document.querySelector('button#reset');
 
 const rgbMaxValue = 255;
 const initialCount = 16;
 
+let currCount = 0;
 
 fillGrid(initialCount);
 
-
-resetButton.addEventListener('click', e => {
+resizeButton.addEventListener('click', e => {
     let str = prompt('Enter an integer between 1 and 100');
 
     if (str && isNaN(str) == false) {
@@ -20,8 +20,13 @@ resetButton.addEventListener('click', e => {
     }
 })
 
+resetButton.addEventListener('click', () => {
+    fillGrid(currCount);
+})
+
 function fillGrid(count) {
     containerDiv.innerHTML = '';
+    currCount = count;
 
     for (let i = 0; i < count; i++) {
         for (let j = 0; j < count; j++) {
