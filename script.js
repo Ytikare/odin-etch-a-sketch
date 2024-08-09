@@ -29,9 +29,16 @@ function fillGrid(count) {
             divElement.classList.add('pad');
 
             divElement.style.flex = `1 0 calc(100% / ${count + 1})`;
+            divElement.style.opacity = '0';
 
             divElement.addEventListener('mouseover', e => {
+                if (e.target.style.opacity == '0') {
                     e.target.style.background = `rgb(${getRandomInt(rgbMaxValue)}, ${getRandomInt(rgbMaxValue)}, ${getRandomInt(rgbMaxValue)})`;
+                } 
+                
+                if (e.target.style.opacity != '1') {
+                    increaseElementOpacity(e.target);
+                }
             })
             containerDiv.appendChild(divElement);
         }
@@ -42,3 +49,10 @@ function fillGrid(count) {
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
+
+
+function increaseElementOpacity(el) {
+    let elementOpacity = Number(el.style.opacity);
+    elementOpacity += 0.1;
+    el.style.opacity = elementOpacity.toFixed(1);
+}
