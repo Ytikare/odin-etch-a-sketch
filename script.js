@@ -1,9 +1,10 @@
 const containerDiv = document.querySelector('.container');
 const resetButton = document.querySelector('.button-div > button');
+
+
 const rgbMaxValue = 255;
-
-
 const initialCount = 16;
+
 
 fillGrid(initialCount);
 
@@ -13,7 +14,7 @@ resetButton.addEventListener('click', e => {
 
     if (str && isNaN(str) == false) {
         let count = Number(str);
-        if (Number.isInteger(count)) {
+        if (Number.isInteger(count) && count >= 1 && count <= 100) {
             fillGrid(count);
         }
     }
@@ -43,7 +44,6 @@ function fillGrid(count) {
             containerDiv.appendChild(divElement);
         }
     }
-
 }
 
 function getRandomInt(max) {
