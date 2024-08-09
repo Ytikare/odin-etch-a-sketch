@@ -1,5 +1,6 @@
 const containerDiv = document.querySelector('.container');
 const resetButton = document.querySelector('.button-div > button');
+const rgbMaxValue = 255;
 
 
 const initialCount = 16;
@@ -30,10 +31,14 @@ function fillGrid(count) {
             divElement.style.flex = `1 0 calc(100% / ${count + 1})`;
 
             divElement.addEventListener('mouseover', e => {
-                e.target.classList.add('fill-color');
+                    e.target.style.background = `rgb(${getRandomInt(rgbMaxValue)}, ${getRandomInt(rgbMaxValue)}, ${getRandomInt(rgbMaxValue)})`;
             })
             containerDiv.appendChild(divElement);
         }
     }
 
 }
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
